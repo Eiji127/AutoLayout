@@ -58,10 +58,10 @@ class ViewController: UIViewController {
  
  ・NSLayoutConstraintのインスタンス化↓
  let leftConstraint = NSLayoutConstraint(item: contentView, //制約を追加する対象ビューA
-                                         attribute: .Left, //ビューAの制約を追加する位置
-                                         relatedBy: .Equal, //ビューたちの関係性(=,≧,≦から選択)
+                                         attribute: .left, //ビューAの制約を追加する位置
+                                         relatedBy: .equal, //ビューたちの関係性(=,≧,≦から選択)
                                          toItem: view, //制約を追加する対象ビューB
-                                         attribute: .Left, //ビューBの制約を追加する位置
+                                         attribute: .left, //ビューBの制約を追加する位置
                                          multiplier: 1.0, //制約式の定数a
                                          constant: 10.0) //制約式の定数b
  view.addConstraint(leftConstraint)
@@ -136,5 +136,22 @@ class ViewController: UIViewController {
 
      case notAnAttribute = 0
  }
+ 
+ ⅲ. Constant - 制約の距離
+ ・Constant(制約定数) = コンポーネントの相対距離やサイズを表し、以下のように宣言したもの
+ var constant: CGFloat
+ （例）：Button1とButton2の間の距離を10 ptとするとき、Constantが10.0となる
+ ・UIViewのanimateWithDuration(_:animations:)メソッドと組み合わせると制約定数の変化をアニメーションにすることが可能
+ 
+ ⅳ. Relation - 要素の関係性
+ ・Relation(関係) = First Itemとsecond ItemのAtribute同士の関係性を示す
+ var relation: NSLayoutConstraint.Relation { get }
+ 
+ public enum Relation : Int {
+     case lessThanOrEqual = -1
+     case equal = 0
+     case greaterThanOrEqual = 1
+ }
  */
+
 
