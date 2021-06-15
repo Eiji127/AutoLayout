@@ -16,17 +16,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V1S-2n-wWR">
-                                <rect key="frame" x="156" y="163" width="103" height="51"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V1S-2n-wWR">
+                                <rect key="frame" x="50" y="238" width="103" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="103" id="OMg-6k-KvZ"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="tapbutton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CSa-cg-0aJ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TNG-nW-VB3">
+                                <rect key="frame" x="210" y="194" width="103" height="51"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="tapbutton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4X6-EX-BWE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="V1S-2n-wWR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" multiplier="2" constant="150" id="0M9-jS-agT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="TNG-nW-VB3" secondAttribute="bottom" constant="617" id="7Xk-H9-ehw"/>
+                            <constraint firstItem="TNG-nW-VB3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="fi7-5H-1RE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TNG-nW-VB3" secondAttribute="trailing" constant="101" id="iUo-CH-BlA"/>
+                            <constraint firstItem="V1S-2n-wWR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="xqe-cW-A1X"/>
+                            <constraint firstItem="TNG-nW-VB3" firstAttribute="leading" secondItem="V1S-2n-wWR" secondAttribute="trailing" constant="57" id="z4c-dN-dQB"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="button" destination="V1S-2n-wWR" id="FPx-go-DVM"/>
