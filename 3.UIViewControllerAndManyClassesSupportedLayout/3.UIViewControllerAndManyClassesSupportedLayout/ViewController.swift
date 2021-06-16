@@ -74,6 +74,20 @@ class ViewController: UIViewController {
      ⅲ. 制約の追加や削除
      ⅳ. 制約を与えられたビューの階層変更
      
+     ex. 端末の回転やウィンドウサイズの変更、オブジェクトの追加削除といったイベントのとき
+     
+     -> 制約更新においてパフォーマンスが十分でないときにupdateConstraint()をオーバーライドすることで改善することが可能
+     ->デベロッパーが制約の更新を明示的に実行する時、updateConstraintsIfNeeded()、setNeedsUpdateConstraints()を呼ぶ
+     
+     - 2. フレームの更新
+     ・レイアウトエンジンの再計算結果(フレーム情報)をビューが受け取り、layoutSubviews()メソッドが呼ばれ、トップダウン(親ビュー→子ビュー)にフレーム更新を実行させる
+     ・layoutSubviews() -> updateConstraintsIfNeeded() -> 必要であれば制約の更新
+     ->デベロッパーがフレームの更新を明示的に実行する時、layoutIfNeeded()、setNeedsLayout()を呼ぶ
+     ・UIKitによるレイアウトはメインスレッドでレイアウトメソッドを呼ぶ必要がある(スレッドセーフではない)
+     ・layoutSubviews()メソッドはよく利用される(-> デベロッパーが制約の更新を明示的に変更を加えたタイミングで呼ぶことができる)
+     
+     - 3. レンダリング
+     
      
      */
     
